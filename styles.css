@@ -1,0 +1,25 @@
+.header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	height: 30px;
+}
+
+footer {
+	background-color : lightgrey;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.flex div {
+	width: 200px;
+	background-color: lightgrey;
+}
+
+.flex img {
+	width: 10%;
+	flex-shrink: 0;
+}

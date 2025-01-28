@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Application météo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="td1.js"></script>
+    <div class="header">
+        <h3>TD n°1 Programmation Web - Application météo</h3>
+    </div>
+    <div class="liste">
+        <label for="villes">Choisissez une ville :</label>
+        <select id="villes" name="villes" onchange="afficheVille()">
+            <option value="Niort">Niort</option>
+            <option value="Paris">Paris</option>
+            <option value="Reims">Reims</option>
+        </select>
+    </div>
+    <div class="flex" style="display: flex; justify-content: space-evenly;">
+        <div id="Niort" class="ville">
+            <h2>Niort</h2>
+            <p>12°, pluvieux</p>
+            <img src="pluvieux.png" width="20%" />
+        </div>
+        <div id="Paris" class="ville">
+            <h2>Paris</h2>
+            <p>6°, orageux</p>
+            <img src="orageux.png" width="20%" />
+        </div>
+        <div id="Reims" class="ville">
+            <h2>Reims</h2>
+            <p>14°, ensoleillé</p>
+            <img src="ensoleille.png" width="20%" />
+        </div>
+    </div>
+	<footer>
+        <p>Hélène Vizoso</p>
+        <p>Icônes météo par <a href="url">https://thenounproject.com</a></p>
+    </footer>
+</body>
+</html>

@@ -1,25 +1,32 @@
+/* Style pour l'en-tête */
 .header {
-	background-color: black;
-	color: white;
-	text-align: center;
-	height: 30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 30px;
 }
 
+/* Style pour la liste déroulante */
+.liste {
+    margin: 20px;
+}
+
+/* Style pour chaque ville */
+.ville {
+    width: 200px;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style pour le texte dans les div */
+.ville h2, 
+.ville p {
+    margin: 0;
+}
+
+/* Style pour le pied de page */
 footer {
-	background-color : lightgrey;
-}
-
-.flex {
-	display: flex;
-	justify-content: space-evenly;
-}
-
-.flex div {
-	width: 200px;
-	background-color: lightgrey;
-}
-
-.flex img {
-	width: 10%;
-	flex-shrink: 0;
+    background-color: lightgrey;
 }

@@ -1,2 +1,1 @@
 # hvizoso.github.io
-Wishlist

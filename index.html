@@ -1,43 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Application météo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Wishlist</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <script src="td1.js"></script>
-    <div class="header">
-        <h3>TD n°1 Programmation Web - Application météo</h3>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>✨ Ma Wishlist ✨</h1>
+                <p class="subtitle">Mes envies du moment</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="wishlist-grid">
+                <!-- Item 1 -->
+                <div class="wishlist-card">
+                    <div class="card-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Livre</h3>
+                        <p class="card-description">Un roman captivant à découvrir</p>
+                        <div class="card-footer">
+                            <span class="price">29.99€</span>
+                            <button class="btn-add" onclick="addToCart(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="wishlist-card">
+                    <div class="card-image">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Casque Audio</h3>
+                        <p class="card-description">Qualité sonore premium et confortable</p>
+                        <div class="card-footer">
+                            <span class="price">149.99€</span>
+                            <button class="btn-add" onclick="addToCart(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="wishlist-card">
+                    <div class="card-image">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Appareil Photo</h3>
+                        <p class="card-description">Capture tes plus beaux moments</p>
+                        <div class="card-footer">
+                            <span class="price">699.99€</span>
+                            <button class="btn-add" onclick="addToCart(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="wishlist-card">
+                    <div class="card-image">
+                        <i class="fas fa-watch"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Montre Connectée</h3>
+                        <p class="card-description">Suis ta santé au quotidien</p>
+                        <div class="card-footer">
+                            <span class="price">199.99€</span>
+                            <button class="btn-add" onclick="addToCart(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="wishlist-card">
+                    <div class="card-image">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Manette de Jeu</h3>
+                        <p class="card-description">Jouez avec style et précision</p>
+                        <div class="card-footer">
+                            <span class="price">79.99€</span>
+                            <button class="btn-add" onclick="addToCart(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="wishlist-card">
+                    <div class="card-image">
+                        <i class="fas fa-plant-pot"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Plante Décoration</h3>
+                        <p class="card-description">Apportez la nature chez vous</p>
+                        <div class="card-footer">
+                            <span class="price">34.99€</span>
+                            <button class="btn-add" onclick="addToCart(this)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Ma Wishlist - Hélène Vizoso</p>
+        </footer>
     </div>
-    <div class="liste">
-        <label for="villes">Choisissez une ville :</label>
-        <select id="villes" name="villes" onchange="afficheVille()">
-            <option value="Niort">Niort</option>
-            <option value="Paris">Paris</option>
-            <option value="Reims">Reims</option>
-        </select>
-    </div>
-    <div class="flex" style="display: flex; justify-content: space-evenly;">
-        <div id="Niort" class="ville">
-            <h2>Niort</h2>
-            <p>12°, pluvieux</p>
-            <img src="pluvieux.png" width="20%" />
-        </div>
-        <div id="Paris" class="ville">
-            <h2>Paris</h2>
-            <p>6°, orageux</p>
-            <img src="orageux.png" width="20%" />
-        </div>
-        <div id="Reims" class="ville">
-            <h2>Reims</h2>
-            <p>14°, ensoleillé</p>
-            <img src="ensoleille.png" width="20%" />
-        </div>
-    </div>
-	<footer>
-        <p>Hélène Vizoso</p>
-        <p>Icônes météo par <a href="url">https://thenounproject.com</a></p>
-    </footer>
+
+    <script>
+        function addToCart(button) {
+            button.classList.toggle('active');
+            const card = button.closest('.wishlist-card');
+            const title = card.querySelector('.card-title').textContent;
+            
+            if (button.classList.contains('active')) {
+                card.style.animation = 'pulse 0.4s ease-out';
+            }
+        }
+    </script>
 </body>
 </html>

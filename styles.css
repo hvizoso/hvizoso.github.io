@@ -1,32 +1,250 @@
-/* Style pour l'en-tête */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* En-tête */
 .header {
-    background-color: black;
-    color: white;
     text-align: center;
-    height: 30px;
+    color: white;
+    padding: 40px 20px;
+    margin-bottom: 50px;
 }
 
-/* Style pour la liste déroulante */
-.liste {
-    margin: 20px;
+.header-content {
+    animation: slideDown 0.8s ease-out;
 }
 
-/* Style pour chaque ville */
-.ville {
-    width: 200px;
-    background-color: lightgrey;
+.header h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    opacity: 0.95;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Grille de wishlist */
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+/* Carte wishlist */
+.wishlist-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.wishlist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+.card-image {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 180px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    font-size: 4em;
+    color: white;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Style pour le texte dans les div */
-.ville h2, 
-.ville p {
-    margin: 0;
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
 }
 
-/* Style pour le pied de page */
-footer {
-    background-color: lightgrey;
+.card-image i {
+    font-size: 3.5em;
+    z-index: 1;
+    transition: transform 0.3s ease-out;
+}
+
+.wishlist-card:hover .card-image i {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    color: #2d3748;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.card-description {
+    color: #718096;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.4em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.btn-add {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-add:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+}
+
+.btn-add.active {
+    animation: pulse 0.4s ease-out;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-add.active i {
+    color: #ff6b9d;
+}
+
+/* Pied de page */
+.footer {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    font-size: 0.95em;
+    opacity: 0.9;
+    margin-top: 50px;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .wishlist-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card-image i {
+        font-size: 2.5em;
+    }
+
+    .card-title {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .wishlist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-add {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
 }
